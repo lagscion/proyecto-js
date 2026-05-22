@@ -2,3 +2,53 @@ header, nav{display:flex; justify-content:  center;letter-spacing: 0;font-size: 
 hr{width: 100%;}
 nav{display: block;margin-left: 43%;margin-right: 50%;}
 div{display: flex;}
+/* Estilos para la cabecera (para alinear los elementos) */
+header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Espacio entre la flecha y el título */
+}
+
+/* Limpiamos el botón por defecto */
+.btn-volver {
+    background: none;
+    /* Quita el fondo gris */
+    border: none;
+    /* Quita el borde */
+    padding: 0;
+    /* Quita márgenes internos */
+    cursor: pointer;
+    /* Hace que aparezca la mano al pasar el cursor */
+    display: flex;
+    /* Centra el SVG perfectamente */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos de la flecha SVG */
+.icono-flecha {
+    width: 32px;
+    /* Tamaño de la flecha */
+    height: 32px;
+    fill: none;
+    /* Sin relleno de fondo */
+    stroke: #333333;
+    /* Color de la línea (cambialo al que quieras) */
+    stroke-width: 2.5;
+    /* Grosor de la línea */
+    stroke-linecap: round;
+    /* Puntas redondeadas */
+    stroke-linejoin: round;
+    /* Esquinas redondeadas */
+    transition: transform 0.2s ease, stroke 0.2s ease;
+    /* Animación suave */
+}
+
+/* Efecto visual cuando el usuario pasa el mouse por encima */
+.btn-volver:hover .icono-flecha {
+    stroke: #0076ff;
+    /* Cambia a color azul (puedes usar el tuyo) */
+    transform: translateX(-5px);
+    /* Hace un pequeño salto hacia la izquierda */
+}

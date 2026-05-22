@@ -1,3 +1,29 @@
-header{display: flex; letter-spacing: 3px;margin-left: 0;}
-header a{font-family: 'Times New Roman', Times, serif; letter-spacing: 3px;text-decoration: none;color: black;}
-header a:hover{cursor: pointer;}
+body {
+    margin: 0;
+    padding: 0;
+    background: #e0aaff;
+}
+
+header, header a{
+    display: flex;
+    /* 🚀 Esto empuja la bienvenida a la izquierda y el ingresar a la derecha */
+    justify-content: space-between;
+    /* Centra verticalmente ambos elementos para que queden alineados en el medio */
+    align-items: center;
+    /* Un pequeño margen a los lados para que el texto no toque el borde exacto de la pantalla */
+    padding: 0 20px;
+    color: #9d4edd;
+    background-color: #10002b;
+    height: 120px;
+    font-family: 'Times New Roman', Times, serif;
+        text-decoration: none;
+}
+
+header a:hover {
+    cursor: pointer;
+    color: #5a189a;
+}
+
+hr {
+    width: 100%;
+}
