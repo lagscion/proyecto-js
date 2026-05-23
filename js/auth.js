@@ -21,9 +21,4 @@
     const boton = document.getElementById("btnIngresar");
     boton.addEventListener("click", ingresar);
 
-     function comprovacion (){
-        localStorage.getItem()
-    }
-
-
 

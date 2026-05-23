@@ -38,7 +38,7 @@ function cerrarModal() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    mostrarcategorias();
+    mostrarCategorias();
     const agregar = document.getElementById("btnAgregar");
     agregar.addEventListener("click", abrirModal);
     const guardar = document.getElementById("btnGuardar");
