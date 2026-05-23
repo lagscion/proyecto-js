@@ -11,6 +11,7 @@
         } else {
                 console.log("¡Acceso correcto!");
                 alert("Bienvenido");
+                localStorage.setItem("sesion", JSON.stringify({activa: true}))
             setTimeout(() => {
                 window.location.href = "admin.html";
             }, 500);
@@ -19,6 +20,10 @@
 
     const boton = document.getElementById("btnIngresar");
     boton.addEventListener("click", ingresar);
+
+    export function comprovacion (){
+        localStorage.getItem()
+    }
 
 
 
