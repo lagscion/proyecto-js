@@ -1,16 +1,35 @@
-header, nav{display:flex; justify-content:  center;letter-spacing: 0;font-size: 80%;margin-left: 35%;margin-right: 35%;}
-hr{width: 100%;}
-nav{display: block;margin-left: 43%;margin-right: 50%;}
-div{display: flex;}
-/* Estilos para la cabecera (para alinear los elementos) */
-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    /* Espacio entre la flecha y el título */
-}
+header{display: flex; color: #290b5e;justify-content: center;font-family: sans-serif;gap: 60px;background-color:  #d2d2f5;height: 100px;align-items: center;border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;border-bottom: 2px solid #7B2CBF}
+nav{text-align: center;padding: 3%;margin: 12px;color: #290b5e;font-family: sans-serif;font-size:200%;font-weight: bold;text-transform: uppercase;}
+p {
+    /* 1. Fondo semi-transparente (blanco con 20% de opacidad) */
+    background-color: rgba(255, 255, 255, 0.2);
 
-/* Limpiamos el botón por defecto */
+    /* 2. El truco del vidrio: desenfoca lo que está detrás */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Soporte para Safari */
+
+    /* 3. Borde fino y sutil para simular el grosor del vidrio */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* 4. Esquinas redondeadas (el efecto vidrio se ve mejor así) */
+    border-radius: 12px;
+
+    /* Espaciado interno para que el texto no toque los bordes */
+    padding: 20px;
+
+    /* Una sombra muy suave para darle profundidad */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    /* Color del texto (asegúrate de que contraste bien) */
+    color: #290b5e;
+width: fit-content;
+    /* Hace que el recuadro se ajuste al contenido */
+    margin: 12px auto;
+    /* Centra el recuadro perfectamente en la pantalla */
+}
+/* Limpiamos el botón por defecto*/
 .btn-volver {
     background: none;
     /* Quita el fondo gris */
@@ -26,16 +45,68 @@ header {
     justify-content: center;
 }
 
+body {
+/* El ../ sale de css/, entra a image/ y carga fondo.jpeg */
+    background-image: url('../image/fondo.jpeg');
+
+    /* Evita que se repita como mosaico */
+    background-repeat: no-repeat;
+
+    /* Centra la imagen perfectamente */
+    background-position: center center;
+
+    /* Hace que cubra toda la pantalla de forma responsiva */
+    background-size: cover;
+
+    /* Mantiene el fondo quieto al hacer scroll */
+    background-attachment: fixed;
+    
+        margin: 0;
+        padding: 0;
+background-color: rgba(255, 255, 255, 0.1);
+    /* El 0.6 controla la palidez: más alto = más blanco */
+    background-blend-mode: lighten;
+}
+
+input {
+    height: 60px;
+    width: 350px;
+    /* Altera este número para regular el ancho total */
+    padding: 0 15px;
+    /* Pro-Tip: Agrega espacio adentro para que el texto no se pegue al borde */
+    box-sizing: border-box;
+    /* Evita que el padding rompa las medidas que le diste */
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+font-family: sans-serif;
+    /* Para que combine con tu header */
+    font-size: 1.2rem;
+    /* Hace el texto más grande (puedes usar 18px o 20px también) */
+    font-weight: bold;
+    /* Opcional: hace la letra más gruesa */
+    color: #290b5e;
+    border: 3px solid #7B2CBF;
+    border-radius: 12px;
+    background-color: #d2d2f5;
+}
+
+div{height: 180px;margin: 30px;}
+
+button{height: 60px;width: 350px;border:3px solid #7B2CBF;font-family: sans-serif;font-size: large;font-weight: bold;color: #290b5e;background-color: #d2d2f5;border-radius: 12px;appearance: none;}
+button:hover{background-color: #fff;cursor: pointer;}
+
 /* Estilos de la flecha SVG */
 .icono-flecha {
+
     width: 32px;
     /* Tamaño de la flecha */
     height: 32px;
     fill: none;
     /* Sin relleno de fondo */
-    stroke: #333333;
+    stroke: #290b5e;
     /* Color de la línea (cambialo al que quieras) */
-    stroke-width: 2.5;
+    stroke-width: 4.5;
     /* Grosor de la línea */
     stroke-linecap: round;
     /* Puntas redondeadas */
@@ -43,11 +114,12 @@ header {
     /* Esquinas redondeadas */
     transition: transform 0.2s ease, stroke 0.2s ease;
     /* Animación suave */
+    
 }
 
 /* Efecto visual cuando el usuario pasa el mouse por encima */
 .btn-volver:hover .icono-flecha {
-    stroke: #0076ff;
+    stroke: #7B2CBF;
     /* Cambia a color azul (puedes usar el tuyo) */
     transform: translateX(-5px);
     /* Hace un pequeño salto hacia la izquierda */

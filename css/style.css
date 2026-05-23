@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #e0aaff;
+    background: #F8F7FA;
 }
 
 header, header a{
@@ -12,16 +12,22 @@ header, header a{
     align-items: center;
     /* Un pequeño margen a los lados para que el texto no toque el borde exacto de la pantalla */
     padding: 0 20px;
-    color: #9d4edd;
-    background-color: #10002b;
-    height: 120px;
-    font-family: 'Times New Roman', Times, serif;
-        text-decoration: none;
+    color: #290b5e;
+    background-color: #d2d2f5;
+    height: 80px;
+    font-family: sans-serif;
+    text-decoration: none;
+    letter-spacing: 3px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: bold;
 }
+
+header{border-bottom: 2px solid #7B2CBF ;}
 
 header a:hover {
     cursor: pointer;
-    color: #5a189a;
+    color: #7B2CBF;
 }
 
 hr {
