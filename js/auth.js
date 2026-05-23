@@ -1,4 +1,4 @@
-    export function ingresar() {
+     function ingresar() {
         const usuario = document.getElementById("usuario");
         const pswrd = document.getElementById("contrasena");
 
@@ -21,7 +21,7 @@
     const boton = document.getElementById("btnIngresar");
     boton.addEventListener("click", ingresar);
 
-    export function comprovacion (){
+     function comprovacion (){
         localStorage.getItem()
     }
 

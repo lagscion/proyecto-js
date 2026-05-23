@@ -6,7 +6,7 @@ export function obtenerTodos(clave){
     return JSON.parse(datos);
 }
 
-        export function agrergarItem(clave, valor){
+        export function agregarItem(clave, valor){
             const array = obtenerTodos(clave)
             valor.id = Date.now()
             array.push (valor)
