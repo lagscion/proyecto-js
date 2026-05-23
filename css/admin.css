@@ -89,6 +89,16 @@ font-family: sans-serif;
     border: 3px solid #7B2CBF;
     border-radius: 12px;
     background-color: #d2d2f5;
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+    border: 3px solid #480caf;
+    /* Crea un resplandor morado suave alrededor del input */
+    box-shadow: 0 0 8px rgba(71, 14, 169, 0.681);
+    transition: box-shadow 0.2s ease;
+    /* Hace que el resplandor aparezca suavemente */
 }
 
 div{height: 180px;margin: 30px;}

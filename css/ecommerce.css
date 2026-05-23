@@ -1,0 +1,104 @@
+header {
+    display: flex;
+    color: #290b5e;
+    justify-content: center;
+    font-family: sans-serif;
+    gap: 60px;
+    background-color: #d2d2f5;
+    height: 90px;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: #290b5e 2px solid;
+}
+
+body{margin: 0;
+    padding: 0;
+}
+
+nav{align-items: center;border-top: none;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;
+height: 100%;display: grid;gap: 100px;margin: 40px auto;width: 70%;}
+
+.tarjeta{   
+    height: 50%;
+    border: 2px solid #290b5e;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    font-family: sans-serif;
+    color: #290b5e;
+    font-weight: bold;
+    align-content: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+ .tarjeta:nth-child(1){
+    background-image: url('../image/armario.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.5);
+        /* El 0.6 controla la palidez: más alto = más blanco */
+        background-blend-mode: lighten;
+}
+ .tarjeta:nth-child(2) {
+    background-image: url('../image/still-life-with-classic-shirts.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* El 0.6 controla la palidez: más alto = más blanco */
+    background-blend-mode: lighten;
+}
+ .tarjeta:nth-child(3) {
+    background-image: url('../image/empty-storage-space-filled-with-stacks-merchandise-goods.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* El 0.6 controla la palidez: más alto = más blanco */
+    background-blend-mode: lighten;}
+
+        .icono-flecha {
+    
+            width: 32px;
+            /* Tamaño de la flecha */
+            height: 32px;
+            fill: none;
+            /* Sin relleno de fondo */
+            stroke: #290b5e;
+            /* Color de la línea (cambialo al que quieras) */
+            stroke-width: 4.5;
+            /* Grosor de la línea */
+            stroke-linecap: round;
+            /* Puntas redondeadas */
+            stroke-linejoin: round;
+            /* Esquinas redondeadas */
+            transition: transform 0.2s ease, stroke 0.2s ease;
+            /* Animación suave */
+    
+        }
+    
+        /* Efecto visual cuando el usuario pasa el mouse por encima */
+        .btn-volver:hover .icono-flecha {
+            stroke: #7B2CBF;
+            /* Cambia a color azul (puedes usar el tuyo) */
+            transform: translateX(-5px);
+            /* Hace un pequeño salto hacia la izquierda */
+        }
+
+                .btn-volver {
+                    background: none;
+                    /* Quita el fondo gris */
+                    border: none;
+                    /* Quita el borde */
+                    padding: 0;
+                    /* Quita márgenes internos */
+                    cursor: pointer;
+                    /* Hace que aparezca la mano al pasar el cursor */
+                    display: flex;
+                    /* Centra el SVG perfectamente */
+                    align-items: center;
+                    justify-content: center;
+                }
