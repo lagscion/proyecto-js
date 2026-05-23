@@ -5,7 +5,7 @@ import {
   eliminarItem,
 } from "./storage.js";
 
-function mostrarcategorias(){
+function mostrarCategorias(){
     const categorias = obtenerTodos("categorias")
     const contenedor = document.getElementById("tarjetas")
 
@@ -27,7 +27,7 @@ function agregarCategoria (){
     mostrarCategorias();
 }
 
-function abrirmodal(){
+function abrirModal(){
     let cont = document.getElementById("modal")
     cont.style.visibility = "visible";
 }
@@ -40,7 +40,7 @@ function cerrarModal() {
 document.addEventListener("DOMContentLoaded", function () {
     mostrarcategorias();
     const agregar = document.getElementById("btnAgregar");
-    agregar.addEventListener("click", agregarCategoria);
+    agregar.addEventListener("click", abrirModal);
     const guardar = document.getElementById("btnGuardar");
     guardar.addEventListener("click", agregarCategoria);
 
