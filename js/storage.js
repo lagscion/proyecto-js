@@ -28,6 +28,6 @@ export function obtenerTodos(clave){
 
         export function eliminarItem(clave, id ){
             const datos = obtenerTodos(clave);
-            let newarray = datos.filter(item => item.id !== id)
+            let newarray = datos.filter((item) => item.id !== Number(id));
             localStorage.setItem(clave, JSON.stringify(newarray));
         }
