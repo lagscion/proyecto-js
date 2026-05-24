@@ -47,7 +47,11 @@ function agregarCategoria (){
 }
 
 function abrirModal(){
+    let nombre = document.getElementById("nombre");
+    let descripcion = document.getElementById("descripcion");
     let cont = document.getElementById("modal")
+    nombre.value = ""
+    descripcion.value = ""
     cont.style.visibility = "visible";
 }
 
