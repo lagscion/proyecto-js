@@ -140,3 +140,5 @@ function abrirModal() {
         })
         .join("");
     }
+
+    document.addEventListener("DOMContentLoaded");
