@@ -10,7 +10,14 @@ function mostrarCategorias(){
     const contenedor = document.getElementById("tarjetas")
 
 contenedor.innerHTML = categorias.map((categoria) => {
-    return `<h1>${categoria.nombre}</h1><p>${categoria.descripcion}</p>`;
+    return `
+    <div>
+        <h1>${categoria.nombre}</h1>
+        <p>${categoria.descripcion}</p>
+        <button data-id="${categoria.id}">Editar</button>
+        <button data-id="${categoria.id}">Eliminar</button>
+    </div>
+`;
   })
   .join("");
 }
@@ -43,5 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
     agregar.addEventListener("click", abrirModal);
     const guardar = document.getElementById("btnGuardar");
     guardar.addEventListener("click", agregarCategoria);
-
+    document.getElementById("tarjetas").addEventListener("click", function (e) {
+      if (e.target.textContent === "Eliminar") {
+        const id = e.target.dataset.id;
+        eliminarItem("categorias", id);
+        mostrarCategorias()
+      }
+    });
 });
+
