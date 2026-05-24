@@ -84,6 +84,7 @@ function abrirModal() {
   document.getElementById("imagen").value = "";
   document.getElementById("descripcion").value = "";
   document.getElementById("modal").style.visibility = "visible";
+  cargarCategorias();
 }
 
     function cerrarModal() {
@@ -128,5 +129,14 @@ function abrirModal() {
   document.getElementById("descripcion").value = Aeditar.descrp;
       abrirModal();
     }
-    
-    
+
+    function cargarCategorias(){
+      const categorias = obtenerTodos("categorias");
+      const select = document.getElementById("categoria");
+
+      select.innerHTML = categorias
+        .map((categoria) => {
+          return `<option value="${categoria.nombre}">${categoria.nombre}</option>`;
+        })
+        .join("");
+    }
