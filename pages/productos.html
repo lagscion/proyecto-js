@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        #modal{visibility: hidden ;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>PRODUCTOS</h1></header>
+        <button id="agregar">AGREGAR PRODUCTO</button>
+        <div id="productos"></div>
+        <div id="modal">
+            <input type="text" id="codigo" placeholder="codigo">
+            <input type="text" id="nombre" placeholder="nombre">
+            <select name="" id="categoria" aria-placeholder="categoria"></select>
+            <input type="text" id="precio" placeholder="precio">
+            <input type="text" id="imagen" placeholder="imagen">
+            <input type="text" id="descripcion" placeholder="descripcion">
+            <button id="guardar">GUARDAR</button>
+        </div>
+        <script type="module" src="../js/products.js"></script>
+</body>
+</html>
