@@ -15,11 +15,11 @@ function mostrarProductos() {
     .map((producto) => {
       return `
         <div>
-            <h1>${producto.nombre}</h1>
+            <h1>${producto.nom}</h1>
             <p>${producto.codigo}</p>
             <p>${producto.precio}</p>
             <img src="${producto.imagen}">
-            <p>${producto.descripcion}</p>
+            <p>${producto.descrp}</p>
             <button data-id="${producto.id}">Editar</button>
             <button data-id="${producto.id}">Eliminar</button>
         </div>
