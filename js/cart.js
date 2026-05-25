@@ -28,12 +28,14 @@ document.addEventListener("DOMContentLoaded", function(){
                 const id = e.target.dataset.id;
                 eliminarItem("carrito", id);
                 mostrarProductos();
+                sumatoria();
             }
         }
     )
         })
 
 document.getElementById("comprar").addEventListener("click", function () {
+    sumatoria();
   abrirModal();
 });
 
@@ -85,3 +87,12 @@ function confirmar(){
                 cerrarModal();
                 mostrarProductos();
 }
+
+    function sumatoria(){
+        let valor = document.getElementById("valor")
+        let productos = obtenerTodos("carrito")
+        let sumatoria = productos.reduce((acumulador, item)=>{
+            return acumulador + Number(item.precio);
+        },0)
+        valor.innerHTML = `el valor de su compra seria ${sumatoria}` 
+    }
