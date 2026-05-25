@@ -120,7 +120,7 @@ function abrirModal() {
       let array = obtenerTodos("productos")
       let Aeditar =array.find((item) => item.id === ideditando);
   document.getElementById("codigo").value = Aeditar.codigo ;
-  document.getElementById("nombre").value = Aeditar.nombre ;
+  document.getElementById("nombre").value = Aeditar.nom ;
   document.getElementById("categoria").value = Aeditar.categoria;
   document.getElementById("precio").value = Aeditar.precio ;
   document.getElementById("imagen").value = Aeditar.imagen ;

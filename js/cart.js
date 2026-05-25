@@ -20,44 +20,35 @@ export function mostrarProductos() {
     .join("");
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", function () {
     mostrarProductos();
-    document.getElementById("contenedor")
-        .addEventListener("click", function(e) {
-            if (e.target.textContent === "eliminar del carrito") {
-                const id = e.target.dataset.id;
-                eliminarItem("carrito", id);
-                mostrarProductos();
-                sumatoria();
-            }
+
+    document.getElementById("contenedor").addEventListener("click", function (e) {
+        if (e.target.textContent === "eliminar del carrito") {
+        const id = e.target.dataset.id;
+        eliminarItem("carrito", id);
+        mostrarProductos();
+        sumatoria();
         }
-    )
-        })
+    });
 
-document.getElementById("comprar").addEventListener("click", function () {
-    sumatoria();
-  abrirModal();
-});
+    document.getElementById("comprar").addEventListener("click", function () {
+        sumatoria();
+        abrirModal();
+    });
 
-document.getElementById("aceptar").addEventListener("click", function(){
-    confirmar()
-})
+    document.getElementById("aceptar").addEventListener("click", function () {
+        confirmar();
+    });
+    });
 
 function abrirModal() {
-    
-    let identifi =document.getElementById("Noidentificacion");
-    let  nombre = document.getElementById("nombre");
-    let direccion = document.getElementById("direccion");
-    let telefono = document.getElementById("telefono");
-    let mail = document.getElementById("mail");
-    const cont = document.getElementById("modal");
-    Noiden.value = ""
-    nombre.value = "";
-    direccion.value = "";
-    telefono.value ="";
-    mail.value ="";
-     
-    cont.style.visibility = "visible";
+    document.getElementById("Noiden").value = "";
+    document.getElementById("nombre").value = "";
+    document.getElementById("direccion").value = "";
+    document.getElementById("telefono").value = "";
+    document.getElementById("mail").value = "";
+    document.getElementById("modal").style.visibility = "visible";
 }
 
 function cerrarModal(){
@@ -86,6 +77,7 @@ function confirmar(){
                 localStorage.removeItem("carrito");
                 cerrarModal();
                 mostrarProductos();
+                sumatoria();
 }
 
     function sumatoria(){
@@ -94,5 +86,5 @@ function confirmar(){
         let sumatoria = productos.reduce((acumulador, item)=>{
             return acumulador + Number(item.precio);
         },0)
-        valor.innerHTML = `el valor de su compra seria ${sumatoria}` 
+        valor.innerHTML = `el valor de su compra seria  $${sumatoria}` 
     }
