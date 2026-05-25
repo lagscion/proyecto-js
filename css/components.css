@@ -113,3 +113,66 @@
     background-color: #7B2CBF;
     color: #fff;
 }
+
+                .icono-carrito {
+                    width: 35px;
+                    height: 35px;
+                    fill: none;
+                    stroke: #290b5e;
+                    stroke-width: 2;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    cursor: pointer;
+                    transition: transform 0.3s ease, stroke 0.3s ease;
+                }
+        
+                .icono-carrito:hover {
+                    stroke: #7B2CBF;
+                    transform: scale(1.1) rotate(-5deg);
+                }
+        
+                .filtros {
+                    display: flex;
+                    gap: 16px;
+                    padding: 24px 40px 0;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    flex-wrap: wrap;
+                }
+        
+                #buscador {
+                    flex: 1;
+                    min-width: 200px;
+                    height: 44px;
+                    padding: 0 16px;
+                    border: 2px solid #d2d2f5;
+                    border-radius: 10px;
+                    font-family: sans-serif;
+                    font-size: 15px;
+                    color: #290b5e;
+                    background-color: #fff;
+                    outline: none;
+                    transition: border-color 0.2s;
+                }
+        
+                #buscador:focus {
+                    border-color: #7B2CBF;
+                }
+        
+                #filtroCategoria {
+                    height: 44px;
+                    padding: 0 16px;
+                    border: 2px solid #d2d2f5;
+                    border-radius: 10px;
+                    font-family: sans-serif;
+                    font-size: 15px;
+                    color: #290b5e;
+                    background-color: #fff;
+                    outline: none;
+                    cursor: pointer;
+                    transition: border-color 0.2s;
+                }
+        
+                #filtroCategoria:focus {
+                    border-color: #7B2CBF;
+                }
