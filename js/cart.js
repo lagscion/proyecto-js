@@ -72,7 +72,7 @@ function confirmar(){
                 let direccion = document.getElementById("direccion").value;
                 let telefono = document.getElementById("telefono").value;
                 let mail = document.getElementById("mail").value;
-                let fecha = new Date().toLocaleDateString("es-ES");
+                let fecha = new Date().toISOString();
                 let productos = obtenerTodos("carrito")
                 agregarItem("pedido", {
                   identificacion: Noiden,
