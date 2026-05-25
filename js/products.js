@@ -100,9 +100,7 @@ function abrirModal() {
         const guardar = document.getElementById("guardar");
         guardar.addEventListener("click", agregarProducto);
     
-        document
-          .getElementById("productos")
-          .addEventListener("click", function (e) {
+        document.getElementById("productos").addEventListener("click", function (e) {
             if (e.target.textContent === "Eliminar") {
               const id = e.target.dataset.id;
               eliminarItem("productos", id);

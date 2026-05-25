@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        #modal { visibility:hidden ;}
+    </style>
     <title>Document</title>
 </head>
+
 <body>
     <header>
                         <a id="btn-volver" class="btn-volver" aria-label="Volver" href="../index.html">
@@ -16,5 +20,15 @@
         <h1>CARRITO</h1>
     </header>   
     <div id="contenedor"></div>
+    <div id="modal">
+        <input type="text" placeholder="Noidentificacion" id="Noiden">
+        <input type="text" placeholder="nombre" id="nombre">
+        <input type="text" placeholder="direccion" id="direccion">
+        <input type="text" placeholder="telefono" id="telefono">
+        <input type="text" placeholder="e-mail" id="mail">
+        <button id="aceptar">ACEPTAR</button>
+    </div>
+    <button id="comprar">COMPRAR</button>
+<script src="../js/cart.js" type="module"></script>
 </body>
 </html>
