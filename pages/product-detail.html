@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+
+    <link rel="stylesheet" href="../css/product-detail.css">
+    <title>Detalle del producto</title>
+</head>
+<body>
+    <header>
+        <a id="btn-volver" class="btn-volver" aria-label="Volver" href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icono-flecha">
+                <path d="M15 19l-7-7 7-7" />
+            </svg>
+        </a>
+        <h2 id="header-nombre">PRODUCTO</h2>
+        <a href="carrito.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icono-carrito" style="width:35px;height:35px;fill:none;stroke:#290b5e;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+        </a>
+    </header>
+
+    <div class="detalle-contenedor">
+        <img id="detalle-imagen" class="detalle-imagen" src="" alt="">
+        <div class="detalle-info">
+            <span id="detalle-categoria" class="detalle-categoria"></span>
+            <h1 id="detalle-nombre" class="detalle-nombre"></h1>
+            <p id="detalle-codigo" class="detalle-codigo"></p>
+            <p id="detalle-descripcion" class="detalle-descripcion"></p>
+            <span id="detalle-precio" class="detalle-precio"></span>
+            <span id="mensaje-carrito">✓ Producto agregado al carrito</span>
+            <button class="detalle-btn" id="btn-agregar">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <script type="module" src="../js/product-detail.js"></script>
+</body>
+</html>
