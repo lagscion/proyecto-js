@@ -39,6 +39,9 @@ import {
 
 function activarVerMas() {
   const botones = document.querySelectorAll(".vermas");
+  const modal = document.getElementById("modal");
+  const detalleProducto = document.getElementById("detalleProducto");
+  const cerrar = document.getElementById("cerrar");
 
   botones.forEach((boton) => {
     boton.addEventListener("click", function () {
@@ -46,21 +49,31 @@ function activarVerMas() {
       const ordenes = obtenerTodos("pedido");
       const pedido = ordenes[index];
 
-      let productos = pedido.productos
+      detalleProducto.innerHTML = pedido.productos
         .map(
           (item) => `
-                    Producto: ${item.nom}
-                    categoria: ${item.categoria}
-                    Precio: ${Number(item.precio).toLocaleString("es-CO", {
+                <div>
+                    <img src="${item.imagen}" alt="${item.nom}">
+                    <h3>${item.nom}</h3>
+                    <p><strong>Categoría:</strong> ${item.categoria}</p>
+                    <p><strong>Precio:</strong> ${Number(
+                      item.precio
+                    ).toLocaleString("es-CO", {
                       style: "currency",
                       currency: "COP",
-                    })}
-                    descripcion${item.descrp}
-                `
+                    })}</p>
+                    <p><strong>Descripción:</strong> ${item.descripcion}</p>
+                    <hr>
+                </div>
+            `
         )
-        .join("\n");
+        .join("");
 
-      alert(productos);
+      modal.classList.remove("oculto");
     });
+  });
+
+  cerrar.addEventListener("click", () => {
+    modal.classList.add("oculto");
   });
 }
