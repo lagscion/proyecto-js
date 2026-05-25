@@ -6,13 +6,13 @@ export function obtenerTodos(clave){
     return JSON.parse(datos);
 }
 
-        export function agregarItem(clave, valor){
-            const array = obtenerTodos(clave)
-            valor.id = Date.now()
-            array.push (valor)
+            export function agregarItem(clave, valor){
+                const array = obtenerTodos(clave)
+                valor.id = Date.now()
+                array.push (valor)
 
-            localStorage.setItem(clave, JSON.stringify(array) )
-        }
+                localStorage.setItem(clave, JSON.stringify(array) )
+            }
 
         export function actualizarItem(clave, id, datosNuevos){
             const datos = obtenerTodos(clave)
@@ -31,3 +31,9 @@ export function obtenerTodos(clave){
             let newarray = datos.filter((item) => item.id !== Number(id));
             localStorage.setItem(clave, JSON.stringify(newarray));
         }
+
+        export function agregarAlcarrito(clave , valor){
+            const array = obtenerTodos(clave)
+            array.push(valor);
+                localStorage.setItem(clave, JSON.stringify(array) )
+            }

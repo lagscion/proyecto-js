@@ -1,4 +1,4 @@
-import { obtenerTodos } from "./storage.js";
+import { obtenerTodos, agregarAlcarrito } from "./storage.js";
 
 function mostrarProductos() {
   const productos = obtenerTodos("productos");
@@ -19,3 +19,17 @@ function mostrarProductos() {
     })
     .join("");
 }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    mostrarProductos();
+    document.getElementById("productos")
+    .addEventListener("click", function (e) {
+      if (e.target.textContent === "agregar al carrito"){
+        const productos = obtenerTodos("productos");
+        const id = e.target.dataset.id;
+        let producto = productos.find((item) => item.id === Number(id));
+        agregarAlcarrito("carrito", producto);
+
+      }
+    })
+    })
