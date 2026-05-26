@@ -24,7 +24,7 @@ import {
               currency: "COP",
             })}
             <button class="vermas" data-index="${index}">VER MAS</button>
-            <div>
+            </div>
             `;
             })
             .join("");
