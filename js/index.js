@@ -52,10 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("productos").addEventListener("click", function (e) {
     const boton = e.target.closest(".product-card__btn");
+
     if (boton) {
-        const id = boton.dataset.id;
-        const productos = obtenerTodos("productos");
-        const producto = productos.find((item) => item.id === Number(id));
-        agregarAlcarrito("carrito", producto);
+      const id = boton.dataset.id;
+      const productos = obtenerTodos("productos");
+      const producto = productos.find((item) => item.id === Number(id));
+
+      agregarAlcarrito("carrito", producto);
     }
+  });
 });
