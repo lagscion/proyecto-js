@@ -51,11 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   document.getElementById("productos").addEventListener("click", function (e) {
-    if (e.target.closest(".product-card__btn")) {
-      const id = e.target.dataset.id;
-      const productos = obtenerTodos("productos");
-      const producto = productos.find((item) => item.id === Number(id));
-      agregarAlcarrito("carrito", producto);
+    const boton = e.target.closest(".product-card__btn");
+    if (boton) {
+        const id = boton.dataset.id;
+        const productos = obtenerTodos("productos");
+        const producto = productos.find((item) => item.id === Number(id));
+        agregarAlcarrito("carrito", producto);
     }
-  });
 });
