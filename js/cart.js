@@ -106,14 +106,39 @@
     }
 
     function confirmar() {
-    let Noiden = document.getElementById("Noiden").value;
-    let nombre = document.getElementById("nombre").value;
-    let direccion = document.getElementById("direccion").value;
-    let telefono = document.getElementById("telefono").value;
-    let mail = document.getElementById("mail").value;
+    let Noiden = document.getElementById("Noiden").value.trim();
+    let nombre = document.getElementById("nombre").value.trim();
+    let direccion = document.getElementById("direccion").value.trim();
+    let telefono = document.getElementById("telefono").value.trim();
+    let mail = document.getElementById("mail").value.trim();
 
+    // Identificación: solo números, entre 6 y 12 dígitos
+    if (!/^\d{6,12}$/.test(Noiden)) {
+        alert("La identificación debe tener entre 6 y 12 números");
+        return;
+    }
+
+    // Nombre: solo letras y espacios, mínimo 3 caracteres
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/.test(nombre)) {
+        alert("El nombre debe tener al menos 3 letras y no puede contener números");
+        return;
+    }
+
+    // Dirección: mínimo 5 caracteres
+    if (direccion.length < 5) {
+        alert("La dirección debe tener al menos 5 caracteres");
+        return;
+    }
+
+    // Teléfono: exactamente 10 dígitos
     if (!/^\d{10}$/.test(telefono)) {
         alert("El teléfono debe tener exactamente 10 números");
+        return;
+    }
+
+    // Email: formato válido
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) {
+        alert("El correo electrónico no es válido");
         return;
     }
 
@@ -127,7 +152,7 @@
         telefono: telefono,
         mail: mail,
         fecha: fecha,
-        productos: productos, // ✅ cada producto ya trae su cantidad
+        productos: productos,
     });
 
     localStorage.removeItem("carrito");
