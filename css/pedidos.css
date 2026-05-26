@@ -1,0 +1,241 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y FONDO
+   ========================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F8F7FA;
+    /* Fondo claro idéntico a las demás interfaces */
+    font-family: sans-serif;
+    color: #290b5e;
+}
+
+/* Header unificado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    color: #290b5e;
+    background-color: #d2d2f5;
+    height: 80px;
+    border-bottom: 2px solid #7B2CBF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header #btn-volver {
+    position: absolute;
+}
+
+/* ==========================================================================
+   CONTENEDOR DE TARJETAS DE PEDIDO
+   ========================================================================== */
+#contenedor {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Separación entre tarjetas de pedidos */
+}
+
+/* Tarjeta de Pedido generada por tu JS (.map) */
+#contenedor>div {
+    background-color: #fff;
+    border: 2px solid #d2d2f5;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(41, 11, 94, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+    /* TRUCO CLAVE: Esto hace que el texto plano respete tus saltos de línea del template string */
+    white-space: pre-line;
+    line-height: 1.8;
+    font-size: 15px;
+    color: #4a3b6a;
+    position: relative;
+    /* Para posicionar u organizar componentes internos si es necesario */
+}
+
+#contenedor>div:hover {
+    transform: translateY(-2px);
+    border-color: #7B2CBF;
+    box-shadow: 0 6px 18px rgba(41, 11, 94, 0.1);
+}
+
+/* Botón VER MAS dentro de las tarjetas */
+#contenedor>div .vermas {
+    display: block;
+    height: 40px;
+    width: 140px;
+    margin-top: 12px;
+    /* Espacio después de los datos del pedido */
+    border: 2px solid #7B2CBF;
+    border-radius: 8px;
+    background-color: #d2d2f5;
+    color: #290b5e;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+}
+
+#contenedor>div .vermas:hover {
+    background-color: #7B2CBF;
+    color: #fff;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE PANTALLA COMPLETA DEL MODAL (Fondo oscuro)
+   ========================================================================== */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(41, 11, 94, 0.5);
+    /* Fondo traslúcido morado */
+    backdrop-filter: blur(4px);
+    /* Efecto vidrio difuminado de fondo */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Clase que controla tu JS para ocultar/mostrar el modal */
+#modal.oculto {
+    display: none !important;
+}
+
+/* Caja blanca interna del modal */
+.modal-contenido {
+    background-color: #fff;
+    width: 500px;
+    max-width: 90%;
+    max-height: 80vh;
+    padding: 30px;
+    border-radius: 16px;
+    border: 2px solid #7B2CBF;
+    box-shadow: 0 10px 30px rgba(41, 11, 94, 0.25);
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Permite hacer scroll si hay muchos productos en el pedido */
+}
+
+/* Botón cerrar (X) en la esquina superior */
+#cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #5a4a7a;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#cerrar:hover {
+    color: #7B2CBF;
+}
+
+/* ==========================================================================
+   CONTENIDO INTERNO DEL MODAL (#detalleProducto)
+   ========================================================================== */
+#detalleProducto {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bloque contenedor de cada producto comprado dentro del modal */
+#detalleProducto>div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 0 0 0;
+}
+
+/* Nombre del producto en el detalle */
+#detalleProducto>div h3 {
+    font-size: 18px;
+    color: #290b5e;
+    margin: 0;
+}
+
+/* Imagen del producto dentro del modal */
+#detalleProducto>div img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background-color: #d2d2f5;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* Párrafos de detalles de producto (Categoría, Precio, Descripción) */
+#detalleProducto>div p {
+    font-size: 14px;
+    color: #5a4a7a;
+    margin: 0;
+    line-height: 1.4;
+}
+
+#detalleProducto>div p strong {
+    color: #290b5e;
+}
+
+/* Línea divisoria entre artículos dentro del modal */
+#detalleProducto>div hr {
+    border: none;
+    border-top: 2px dashed #d2d2f5;
+    margin: 16px 0 0 0;
+}
+
+/* Remueve la línea divisoria del último producto de la lista */
+#detalleProducto>div:last-of-type hr {
+    display: none;
+}
+
+/* ==========================================================================
+   ESTILOS DE LA FLECHA REGRESAR (SVG)
+   ========================================================================== */
+.icono-flecha {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: #290b5e;
+    stroke-width: 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s ease, stroke 0.2s ease;
+}
+
+.btn-volver {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-volver:hover .icono-flecha {
+    stroke: #7B2CBF;
+    transform: translateX(-5px);
+}
