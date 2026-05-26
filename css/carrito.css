@@ -1,0 +1,297 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F8F7FA;
+    font-family: sans-serif;
+    color: #290b5e;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    color: #290b5e;
+    background-color: #d2d2f5;
+    height: 80px;
+    border-bottom: 2px solid #7B2CBF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header #btn-volver {
+    position: absolute;
+}
+
+
+#contenedor {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 16px;
+    border: 2px solid #d2d2f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(41, 11, 94, 0.04);
+}
+
+
+#comprar {
+    display: block;
+    height: 50px;
+    width: 350px;
+    margin: 30px auto;
+    border: 3px solid #7B2CBF;
+    border-radius: 12px;
+    background-color: #d2d2f5;
+    color: #290b5e;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+#comprar:hover {
+    background-color: #7B2CBF;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(123, 44, 191, 0.3);
+}
+
+#comprar:active {
+    transform: scale(0.98);
+}
+
+
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 2px solid #7B2CBF;
+    box-shadow: 0 10px 30px rgba(41, 11, 94, 0.25);
+    z-index: 1000;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 380px;
+    box-sizing: border-box;
+}
+
+
+#modal input {
+    height: 48px;
+    width: 100%;
+
+    padding: 0 15px;
+    box-sizing: border-box;
+    text-align: left;
+
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: #290b5e;
+    border: 2px solid #d2d2f5;
+    border-radius: 10px;
+    background-color: #F8F7FA;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#modal input:focus {
+    border-color: #480caf;
+    box-shadow: 0 0 8px rgba(71, 14, 169, 0.4);
+    background-color: #fff;
+}
+
+
+#aceptar {
+    height: 48px;
+    width: 100%;
+    border: 2px solid #7B2CBF;
+    border-radius: 10px;
+    background-color: #d2d2f5;
+    color: #290b5e;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#aceptar:hover {
+    background-color: #7B2CBF;
+    color: #fff;
+}
+
+#valor {
+    font-size: 18px;
+    font-weight: bold;
+    color: #290b5e;
+    text-align: center;
+    margin: 8px 0 0 0;
+    padding-top: 12px;
+    border-top: 1px dashed #d2d2f5;
+}
+
+
+#contenedor {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+
+#contenedor>div {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #d2d2f5;
+    border-radius: 12px;
+    padding: 16px;
+    gap: 20px;
+    font-family: sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 4px 12px rgba(41, 11, 94, 0.04);
+}
+
+#contenedor>div:hover {
+    transform: translateY(-2px);
+    border-color: #7B2CBF;
+    box-shadow: 0 6px 18px rgba(41, 11, 94, 0.1);
+}
+
+
+#contenedor>div img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    background-color: #d2d2f5;
+    border-radius: 8px;
+    order: -1;
+
+}
+
+
+#contenedor>div h1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #290b5e;
+    margin: 0;
+    flex: 2;
+
+}
+
+
+#contenedor>div p {
+    font-size: 14px;
+    color: #5a4a7a;
+    margin: 0;
+}
+
+
+#contenedor>div p:nth-of-type(1) {
+    font-size: 12px;
+    font-weight: bold;
+    color: #7B2CBF;
+    background-color: #d2d2f5;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+
+#contenedor>div p:nth-of-type(2) {
+    font-size: 18px;
+    font-weight: bold;
+    color: #290b5e;
+}
+
+
+#contenedor>div p:nth-of-type(3) {
+    font-size: 13px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#contenedor>div button {
+    height: 40px;
+    width: auto;
+    padding: 0 16px;
+    border: 2px solid #7B2CBF;
+    border-radius: 8px;
+    background-color: #d2d2f5;
+    color: #290b5e;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-left: auto;
+    /* Empuja el botón al extremo derecho */
+}
+
+#contenedor>div button:hover {
+    background-color: #7B2CBF;
+    color: #fff;
+}
+
+/* Estilos de la flecha SVG */
+.icono-flecha {
+
+    width: 32px;
+    /* Tamaño de la flecha */
+    height: 32px;
+    fill: none;
+    /* Sin relleno de fondo */
+    stroke: #290b5e;
+    /* Color de la línea (cambialo al que quieras) */
+    stroke-width: 4.5;
+    /* Grosor de la línea */
+    stroke-linecap: round;
+    /* Puntas redondeadas */
+    stroke-linejoin: round;
+    /* Esquinas redondeadas */
+    transition: transform 0.2s ease, stroke 0.2s ease;
+    /* Animación suave */
+
+}
+
+/* Efecto visual cuando el usuario pasa el mouse por encima */
+.btn-volver:hover .icono-flecha {
+    stroke: #7B2CBF;
+    /* Cambia a color azul (puedes usar el tuyo) */
+    transform: translateX(-5px);
+    /* Hace un pequeño salto hacia la izquierda */
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/carrito.css">
     <style>
         #modal { visibility:hidden ;}
     </style>
@@ -24,7 +24,7 @@
         <input type="text" placeholder="Noidentificacion" id="Noiden">
         <input type="text" placeholder="nombre" id="nombre">
         <input type="text" placeholder="direccion" id="direccion">
-        <input type="text" placeholder="telefono" id="telefono">
+        <input type="text" placeholder="telefono" id="telefono" maxlength="10" minlength="10" pattern="[0-9]">
         <input type="text" placeholder="e-mail" id="mail">
         <button id="aceptar">ACEPTAR</button>
         <p id="valor"></p>

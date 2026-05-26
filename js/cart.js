@@ -49,6 +49,7 @@ function abrirModal() {
     document.getElementById("telefono").value = "";
     document.getElementById("mail").value = "";
     document.getElementById("modal").style.visibility = "visible";
+    document.getElementById("modal").style.display = "flex";
 }
 
 function cerrarModal(){
@@ -57,27 +58,36 @@ function cerrarModal(){
 
 }
 
-function confirmar(){
-                let Noiden = document.getElementById("Noiden").value;
-                let nombre = document.getElementById("nombre").value;
-                let direccion = document.getElementById("direccion").value;
-                let telefono = document.getElementById("telefono").value;
-                let mail = document.getElementById("mail").value;
-                let fecha = new Date().toISOString();
-                let productos = obtenerTodos("carrito")
-                agregarItem("pedido", {
-                  identificacion: Noiden,
-                  nombre: nombre,
-                  direccion: direccion,
-                  telefono: telefono,
-                  mail: mail,
-                  fecha: fecha,
-                  productos: productos,
-                });
-                localStorage.removeItem("carrito");
-                cerrarModal();
-                mostrarProductos();
-                sumatoria();
+function confirmar() {
+  let Noiden = document.getElementById("Noiden").value;
+  let nombre = document.getElementById("nombre").value;
+  let direccion = document.getElementById("direccion").value;
+  let telefono = document.getElementById("telefono").value;
+  let mail = document.getElementById("mail").value;
+
+  // Validar teléfono
+  if (!/^\d{10}$/.test(telefono)) {
+    alert("El teléfono debe tener exactamente 10 números");
+    return;
+  }
+
+  let fecha = new Date().toISOString();
+  let productos = obtenerTodos("carrito");
+
+  agregarItem("pedido", {
+    identificacion: Noiden,
+    nombre: nombre,
+    direccion: direccion,
+    telefono: telefono,
+    mail: mail,
+    fecha: fecha,
+    productos: productos,
+  });
+
+  localStorage.removeItem("carrito");
+  cerrarModal();
+  mostrarProductos();
+  sumatoria();
 }
 
     function sumatoria(){
