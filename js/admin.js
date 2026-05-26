@@ -7,3 +7,5 @@ function sesion (){
 }
 
 sesion();
+
+setInterval(sesion,3000);
